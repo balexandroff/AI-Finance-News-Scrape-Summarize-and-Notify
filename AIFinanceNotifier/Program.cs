@@ -198,7 +198,7 @@ class Program
             var smtpClient = new SmtpClient("mail.codixit.com")
             {
                 Port = 25,
-                Credentials = new System.Net.NetworkCredential("contact@codixit.com", "BmwMP0w3r"),
+                Credentials = new System.Net.NetworkCredential("contact@codixit.com", ""),
                 EnableSsl = true,
                 DeliveryMethod = SmtpDeliveryMethod.Network,
                 UseDefaultCredentials = false
