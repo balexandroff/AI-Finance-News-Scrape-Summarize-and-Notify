@@ -195,10 +195,10 @@ class Program
     {
         try
         {
-            var smtpClient = new SmtpClient("mail.codixit.com")
+            var smtpClient = new SmtpClient("mail.test.com")
             {
                 Port = 25,
-                Credentials = new System.Net.NetworkCredential("contact@codixit.com", ""),
+                Credentials = new System.Net.NetworkCredential("test@test.com", ""),
                 EnableSsl = true,
                 DeliveryMethod = SmtpDeliveryMethod.Network,
                 UseDefaultCredentials = false
@@ -206,13 +206,13 @@ class Program
 
             var mailMessage = new MailMessage
             {
-                From = new MailAddress("contact@codixit.com"),
+                From = new MailAddress("contact@test.com"),
                 Subject = "Daily Financial News Summary",
                 Body = string.Join("\n\n", summarizedNews),
                 IsBodyHtml = true,
             };
 
-            mailMessage.To.Add("borko.alexandrov@gmail.com");
+            mailMessage.To.Add("test@gmail.com");
 
             await smtpClient.SendMailAsync(mailMessage);
         }
